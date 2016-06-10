@@ -18,3 +18,15 @@ class FrenchDeck:
 
     def __getitem__(self, item):
         return self._cards[item]
+
+    @staticmethod
+    def spades_high(card):
+        """
+        This method ranks cards by the rule "suit_values" 0 for the 2 of clubs through
+        51 for the ace of spades
+        :param card:
+        :return:
+        """
+        suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+        rank_value = FrenchDeck.ranks.index(card.rank)
+        return rank_value * len(suit_values) + suit_values[card.suit]
