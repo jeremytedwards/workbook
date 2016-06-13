@@ -1,7 +1,8 @@
 # coding=utf-8
 import collections
 
-
+# a named tuple is a subclass of a tuple that takes up the same amount of memory
+# as a tuple because the field names are stored in the class
 Card = collections.namedtuple('Card', ['rank', 'suit'])
 
 
