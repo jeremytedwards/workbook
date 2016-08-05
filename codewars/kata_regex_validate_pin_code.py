@@ -12,6 +12,12 @@ def validate_pin(pin):
     return False
 
 
+# regex
+import re
+def validate_pin(pin):
+    return bool(re.match(r'^(\d{4}|\d{6})$', pin))
+
+
 # clever
 def validate_pin(pin):
     return len(pin) in (4, 6) and pin.isdigit()
