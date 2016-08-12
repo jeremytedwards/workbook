@@ -1,7 +1,8 @@
 # coding=utf-8
 
 def array_diff(a, b):
-    return [x for x in a if x not in set(b)]
+    set_b = set(b)
+    return [i for i in a if i not in set_b]
 
 
 # Your goal in this kata is to implement an difference function, which subtracts one list from another.
