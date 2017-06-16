@@ -20,7 +20,24 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        result = []
+        for i1, v1 in enumerate(nums):
+            for i2, v2 in enumerate(nums[i1 + 1:]):
+                if v1 + v2 == target:
+                    result = [i1, i2 + i1 + 1]
+                    break
+
+        return result
 
 
-# if __name__ == "__main__":
-#     Solution()
+if __name__ == "__main__":
+    test = Solution()
+
+    results = test.twoSum([2, 7, 11, 15], 9) # [0, 1]
+    print(results)
+
+    results = test.twoSum([2, 7, 11, 15], 18) # [1, 2]
+    print(results)
+
+    results = test.twoSum([2, 7, 11, 15], 17) # [1, 3]
+    print(results)
