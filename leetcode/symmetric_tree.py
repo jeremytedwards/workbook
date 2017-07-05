@@ -37,6 +37,17 @@ class Solution(object):
         :rtype: bool
         """
 
+        return self._compareIter(root[1:2]) and self._compareIter(root[3:6])
 
-# if __name__ == "__main__":
-#     Solution()
+    def _compareIter(self, subtree):
+        return subtree == subtree[::-1]
+
+    # def _compareRecusive(self, root):
+
+
+
+
+if __name__ == "__main__":
+    this = Solution()
+    print(this.isSymmetric([1, 2, 2, 3, 4, 4, 3]))
+    print(this.isSymmetric([1, 2, 2, None, 3, None, 3]))
